@@ -14,7 +14,6 @@ Source0:	%{name}-%{version}.tar.bz2
 Source1:	nta-cron-sample
 Patch0:		nta-mandriva_apache_integration.bz2
 Patch1:		nta-config_location.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 Requires:	apache
 BuildRequires:  apache-base >= 2.0.54-5mdk
 BuildArch:  	noarch
