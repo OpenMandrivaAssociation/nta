@@ -62,12 +62,12 @@ EOF
 install -d %{buildroot}%{perl_vendorlib}
 install -m0644 *.pm %{buildroot}%{perl_vendorlib}
 
-install -o apache -d %{buildroot}/var/www/nta
+install -d %{buildroot}/var/www/nta
 install -d %{buildroot}/var/www/nta/images
 install -m0644 images/* %{buildroot}/var/www/nta
-install -o apache -d %{buildroot}/var/run/nta
+install -d %{buildroot}/var/run/nta
 
-install -o apache -d %{buildroot}%{_localstatedir}/nta/data
+install -d %{buildroot}%{_localstatedir}/nta/data
 install -d %{buildroot}%{_localstatedir}/nta/templates
 install -m0644 templates/* %{buildroot}%{_localstatedir}/nta/templates
 
