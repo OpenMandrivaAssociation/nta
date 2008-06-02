@@ -68,9 +68,9 @@ install -d %{buildroot}/var/www/nta/images
 install -m0644 images/* %{buildroot}/var/www/nta
 install -d %{buildroot}/var/run/nta
 
-install -d %{buildroot}%{_localstatedir}/nta/data
-install -d %{buildroot}%{_localstatedir}/nta/templates
-install -m0644 templates/* %{buildroot}%{_localstatedir}/nta/templates
+install -d %{buildroot}%{_localstatedir}/lib/nta/data
+install -d %{buildroot}%{_localstatedir}/lib/nta/templates
+install -m0644 templates/* %{buildroot}%{_localstatedir}/lib/nta/templates
 
 cat > README.urpmi <<EOF
 NTA is installed as a cronjob that runs every five minutes.
@@ -103,5 +103,5 @@ rm -rf %{buildroot}
 /var/www/nta/*
 %attr(0755,apache,apache) %dir /var/run/nta
 
-%attr(0755,apache,apache) %dir %{_localstatedir}/nta/data
-%{_localstatedir}/nta/templates/*
+%attr(0755,apache,apache) %dir %{_localstatedir}/lib/nta/data
+%{_localstatedir}/lib/nta/templates/*
