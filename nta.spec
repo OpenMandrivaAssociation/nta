@@ -1,6 +1,6 @@
 %define name nta
 %define version 1.0
-%define release %mkrel 4
+%define release %mkrel 5
 %define webappconfdir %{_sysconfdir}/httpd/conf/webapps.d
 
 Summary:	Network traffic analyzer
