@@ -1,7 +1,6 @@
 %define name nta
 %define version 1.0
-%define release %mkrel 5
-%define webappconfdir %{_sysconfdir}/httpd/conf/webapps.d
+%define release %mkrel 6
 
 Summary:	Network traffic analyzer
 Name:		%{name}
@@ -14,10 +13,13 @@ Source0:	%{name}-%{version}.tar.bz2
 Source1:	nta-cron-sample
 Patch0:		nta-mandriva_apache_integration.bz2
 Patch1:		nta-config_location.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
-Requires:	apache
-BuildRequires:  apache-base >= 2.0.54-5mdk
-BuildArch:  	noarch
+Requires:	webserver
+%if %mdkversion < 201010
+Requires(post):   rpm-helper
+Requires(postun):   rpm-helper
+%endif
+BuildArch:  noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Sometimes it is good to know, how the network is used, how many
@@ -56,6 +58,7 @@ cat > %{buildroot}%{webappconfdir}/%{name}.conf <<EOF
 
 Alias /nta /var/www/nta
 <Directory /var/www/nta>
+    Order allow,deny
     Allow from all
 </Directory>
 EOF
@@ -80,10 +83,14 @@ browser.
 EOF
 
 %post
+%if %mdkversion < 201010
 %_post_webapp
+%endif
 
 %postun
+%if %mdkversion < 201010
 %_postun_webapp
+%endif
 
 %clean
 rm -rf %{buildroot}
