@@ -112,3 +112,44 @@ rm -rf %{buildroot}
 
 %attr(0755,apache,apache) %dir %{_localstatedir}/lib/nta/data
 %{_localstatedir}/lib/nta/templates/*
+
+
+%changelog
+* Mon Dec 06 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0-7mdv2011.0
++ Revision: 613109
+- the mass rebuild of 2010.1 packages
+
+* Wed Feb 17 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.0-6mdv2010.1
++ Revision: 507259
+- rely on filetrigger for reloading apache configuration begining with 2010.1, rpm-helper macros otherwise
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.0-5mdv2010.0
++ Revision: 430187
+- rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 1.0-4mdv2009.0
++ Revision: 254106
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Wed Dec 19 2007 Thierry Vignaud <tv@mandriva.org> 1.0-2mdv2008.1
++ Revision: 133089
+- fix installing
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Emmanuel Andry <eandry@mandriva.org>
+    - Import nta
+
+
+
+* Sun May 21 2006 Emmanuel Andry <eandry@mandriva.org> 1.0-2mdk
+  Package from Udo Rader <udo.rader@bestsolution.at> 
+    - bugfix for wrong lockfile location
+
+* Sat May 20 2006 Udo Rader <udo.rader@bestsolution.at> 1.0-1mdk
+- initial release on Mandriva

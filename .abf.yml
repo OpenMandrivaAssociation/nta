@@ -1,3 +1,4 @@
 sources:
-  "nta-1.0.tar.bz2:"	cffbbcd008895f4ff761fa1b4e403ed85a151a31
-  "nta-cron-sample:"	fb5d618f841614da008669638be26456937b0771
+  "nta-1.0.tar.bz2": cffbbcd008895f4ff761fa1b4e403ed85a151a31
+  "nta-config_location.bz2": bf31f3674cb2ee21ffcd8cf3ab482628dfce8d70
+  "nta-mandriva_apache_integration.bz2": 27512db830d47f044922509e832d785d26a5cba7

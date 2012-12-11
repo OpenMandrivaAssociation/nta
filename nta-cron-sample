@@ -1,0 +1,6 @@
+#
+# Network Traffic Analyzer
+#
+# processes new network data every five minutes
+
+*/5 * * * * apache (cd /usr/sbin; ./nta.pl)
