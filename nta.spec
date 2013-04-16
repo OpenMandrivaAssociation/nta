@@ -1,6 +1,6 @@
 %define name nta
 %define version 1.0
-%define release: 8
+%define release: 9
 
 Summary:	Network traffic analyzer
 Name:		%{name}
