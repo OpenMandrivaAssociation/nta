@@ -1,11 +1,7 @@
-%define name nta
-%define version 1.0
-%define release: 9
-
 Summary:	Network traffic analyzer
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		nta
+Version:	1.0
+Release:	9
 License:	GPL
 Group:		Monitoring
 URL:		http://www.kyberdigi.cz/projects/nta
@@ -14,12 +10,7 @@ Source1:	nta-cron-sample
 Patch0:		nta-mandriva_apache_integration.bz2
 Patch1:		nta-config_location.bz2
 Requires:	webserver
-%if %mdkversion < 201010
-Requires(post):   rpm-helper
-Requires(postun):   rpm-helper
-%endif
 BuildArch:  noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Sometimes it is good to know, how the network is used, how many
