@@ -43,8 +43,8 @@ install -m0644 config.pl %{buildroot}%{_sysconfdir}/nta
 install -d %{buildroot}%{_sysconfdir}/cron.d
 install -m0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/cron.d/nta
 
-install -d -m 755 %{buildroot}%{webappconfdir}
-cat > %{buildroot}%{webappconfdir}/%{name}.conf <<EOF
+install -d -m 755 %{buildroot}%{_webappconfdir}
+cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
 # configuration for NTA
 
 Alias /nta /var/www/nta
@@ -75,13 +75,10 @@ EOF
 
 
 
-%clean
-rm -rf %{buildroot}
-
 %files
 %defattr(-,root,root)
 %doc README COPYING README.urpmi
-%config(noreplace) %{webappconfdir}/nta.conf
+%config(noreplace) %{_webappconfdir}/nta.conf
 %config(noreplace) %{_sysconfdir}/nta/config.pl
 
 %{_sysconfdir}/cron.d/nta
