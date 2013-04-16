@@ -1,6 +1,6 @@
 %define name nta
 %define version 1.0
-%define release %mkrel 7
+%define release: 8
 
 Summary:	Network traffic analyzer
 Name:		%{name}
@@ -82,15 +82,7 @@ You can check the results by accessing http://localhost/nta with any
 browser.
 EOF
 
-%post
-%if %mdkversion < 201010
-%_post_webapp
-%endif
 
-%postun
-%if %mdkversion < 201010
-%_postun_webapp
-%endif
 
 %clean
 rm -rf %{buildroot}
