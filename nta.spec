@@ -1,7 +1,7 @@
 Summary:	Network traffic analyzer
 Name:		nta
 Version:	1.0
-Release:	10
+Release:	11
 License:	GPL
 Group:		Monitoring
 URL:		http://www.kyberdigi.cz/projects/nta
@@ -29,9 +29,6 @@ NTA runs as a cron job as any unprivileged (non root) user.
 
 %install
 # nta has no make install or similar, so we do it manually
-
-mkdir %{buildroot}
-
 install -d  %{buildroot}%{_sbindir}
 install nta.pl %{buildroot}%{_sbindir}
 
