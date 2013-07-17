@@ -1,7 +1,7 @@
 Summary:	Network traffic analyzer
 Name:		nta
 Version:	1.0
-Release:	9
+Release:	10
 License:	GPL
 Group:		Monitoring
 URL:		http://www.kyberdigi.cz/projects/nta
@@ -28,8 +28,6 @@ NTA runs as a cron job as any unprivileged (non root) user.
 %build
 
 %install
-rm -rf %{buildroot}
-
 # nta has no make install or similar, so we do it manually
 
 mkdir %{buildroot}
@@ -43,14 +41,13 @@ install -m0644 config.pl %{buildroot}%{_sysconfdir}/nta
 install -d %{buildroot}%{_sysconfdir}/cron.d
 install -m0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/cron.d/nta
 
-install -d -m 755 %{buildroot}%{_webappconfdir}
-cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
+install -d -m 755 %{buildroot}%{webappconfdir}
+cat > %{buildroot}%{webappconfdir}/%{name}.conf <<EOF
 # configuration for NTA
 
 Alias /nta /var/www/nta
 <Directory /var/www/nta>
-    Order allow,deny
-    Allow from all
+    Require all granted
 </Directory>
 EOF
 
@@ -73,12 +70,9 @@ You can check the results by accessing http://localhost/nta with any
 browser.
 EOF
 
-
-
 %files
-%defattr(-,root,root)
 %doc README COPYING README.urpmi
-%config(noreplace) %{_webappconfdir}/nta.conf
+%config(noreplace) %{webappconfdir}/nta.conf
 %config(noreplace) %{_sysconfdir}/nta/config.pl
 
 %{_sysconfdir}/cron.d/nta
