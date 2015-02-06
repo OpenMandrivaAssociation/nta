@@ -1,7 +1,7 @@
 Summary:	Network traffic analyzer
 Name:		nta
 Version:	1.0
-Release:	11
+Release:	12
 License:	GPLv2+
 Group:		Monitoring
 Url:		http://www.kyberdigi.cz/projects/nta
