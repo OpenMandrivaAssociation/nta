@@ -4,7 +4,7 @@ Version:	1.0
 Release:	12
 License:	GPLv2+
 Group:		Monitoring
-Url:		http://www.kyberdigi.cz/projects/nta
+Url:		https://www.kyberdigi.cz/projects/nta
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	nta-cron-sample
 Patch0:		nta-mandriva_apache_integration.bz2
